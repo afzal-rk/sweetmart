@@ -14,7 +14,7 @@ public class OrderBillController {
     @Autowired
     private OrderBillService orderBillService;
 
-//    @PostMapping
+//    @
 //    public OrderBill createOrderBill(@RequestBody OrderBill orderBill){
 //        return orderBillService.saveOrderBill();
 //    }
