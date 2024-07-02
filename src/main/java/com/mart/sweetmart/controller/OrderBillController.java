@@ -1,5 +1,6 @@
 package com.mart.sweetmart.controller;
 
+import com.mart.sweetmart.model.OrderBill;
 import com.mart.sweetmart.service.OrderBillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,8 +16,8 @@ public class OrderBillController {
     private OrderBillService orderBillService;
 
 //    @PostMapping
-//    public OrderBill createOrderBill(@RequestBody OrderBill orderBill){
-//        return orderBillService.saveOrderBill();
+//    public OrderBill createOrderBill(@RequestBody OrderBill orderBill) {
+//        return orderBillService.addOrderBill(orderBill);
 //    }
 
 
