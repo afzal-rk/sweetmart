@@ -20,7 +20,7 @@ public class OrderBill {
 
     private float totalCost;
 //    @OneToMany
-//    private List<SweetOrder> listSweetOrder ;
-
+//    @JoinColumn(name = "sweetOrderId")
+//    private List<SweetOrder> sweetOrders;
 
 }

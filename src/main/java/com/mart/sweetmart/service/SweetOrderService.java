@@ -13,16 +13,30 @@ public class SweetOrderService {
     @Autowired
     SweetOrderRepository sweetOrderRepository;
 
-    public void addSweetOrder(SweetOrder sweetOrder){
-        sweetOrderRepository.save(sweetOrder);
+    public SweetOrder addSweetOrder(SweetOrder sweetOrder) {
+        return sweetOrderRepository.save(sweetOrder);
     }
-    public void updateSweetOrder(SweetOrder sweetOrder){
-        sweetOrderRepository.save(sweetOrder);
+    public SweetOrder updateSweetOrder(SweetOrder sweetOrder) {
+        return sweetOrderRepository.save(sweetOrder);
     }
-    public void cancelSweetOrder(Integer sweetOrderId){
-        sweetOrderRepository.deleteById(sweetOrderId);
+    public SweetOrder cancelSweetOrder(int sweetOrderId) {
+        SweetOrder sweetOrder = sweetOrderRepository.findById(sweetOrderId).orElse(null);
+        if (sweetOrder != null) {
+            sweetOrderRepository.delete(sweetOrder);
+        }
+        return sweetOrder;
     }
-    public List<SweetOrder> showAllSweetOrders(){
+    public List<SweetOrder> showAllSweetOrders() {
         return sweetOrderRepository.findAll();
     }
+
+//    public double calculateTotalCost(int sweetOrderId) {
+//        SweetOrder sweetOrder = sweetOrderRepository.findById(sweetOrderId).orElse(null);
+//        if (sweetOrder != null) {
+//            return sweetOrder.getSweetItems().stream()
+//                    .mapToDouble(item -> item.getProduct().getPrice() * item.getQuantity())
+//                    .sum();
+//        }
+//        return 0;
+//    }
 }

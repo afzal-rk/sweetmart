@@ -13,18 +13,25 @@ public class OrderBillService {
     @Autowired
     OrderBillRepository orderBillRepository;
 
-    public List<OrderBill> showAllOrderBills(){
+    public List<OrderBill> showAllOrderBills() {
         return orderBillRepository.findAll();
     }
-    public void addOrderBill(OrderBill orderBill){
-        orderBillRepository.save(orderBill);
+
+    public OrderBill addOrderBill(OrderBill orderBill) {
+        return orderBillRepository.save(orderBill);
     }
-    public void updateOrderBill(OrderBill orderBill){
-        orderBillRepository.save(orderBill);
+    public OrderBill updateOrderBill(OrderBill orderBill) {
+        return orderBillRepository.save(orderBill);
     }
-    public void cancelOrderBill(Integer orderBillId){
-        orderBillRepository.deleteById(orderBillId);
+    public OrderBill cancelOrderBill(int orderBillId) {
+        OrderBill orderBill = orderBillRepository.findById(orderBillId).orElse(null);
+        if (orderBill != null) {
+            orderBillRepository.delete(orderBill);
+        }
+        return orderBill;
     }
 
-
+    public List<OrderBill> showAllOrderBills(int orderBillId) {
+        return orderBillRepository.findByOrderBillId(orderBillId);
+    }
 }
