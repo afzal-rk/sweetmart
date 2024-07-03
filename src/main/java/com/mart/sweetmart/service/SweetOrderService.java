@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SweetOrderService {
@@ -28,6 +29,9 @@ public class SweetOrderService {
     }
     public List<SweetOrder> showAllSweetOrders() {
         return sweetOrderRepository.findAll();
+    }
+    public Optional<SweetOrder> showSweetOrdersById(int sweetOrderId) {
+        return sweetOrderRepository.findById(sweetOrderId);
     }
 
 //    public double calculateTotalCost(int sweetOrderId) {

@@ -1,18 +1,25 @@
 package com.mart.sweetmart.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-@Component
+
 @Entity
-@Table(name = "SweetOrder")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class SweetOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer sweetOrderId;
 
+    @CreationTimestamp
     private LocalDate createdDate;
     private Float totalCost;
 

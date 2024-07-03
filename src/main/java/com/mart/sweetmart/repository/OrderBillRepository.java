@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface OrderBillRepository extends JpaRepository<OrderBill,Integer> {
+
     List<OrderBill> findByOrderBillId(int orderBillId);
 }

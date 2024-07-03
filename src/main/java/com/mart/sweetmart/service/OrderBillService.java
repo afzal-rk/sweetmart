@@ -31,7 +31,7 @@ public class OrderBillService {
         return orderBill;
     }
 
-    public List<OrderBill> showAllOrderBills(int orderBillId) {
+    public List<OrderBill> showOrderBillsById(int orderBillId) {
         return orderBillRepository.findByOrderBillId(orderBillId);
     }
 }

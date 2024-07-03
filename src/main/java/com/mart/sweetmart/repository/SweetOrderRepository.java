@@ -9,7 +9,8 @@ import java.util.List;
 @Repository
 public interface SweetOrderRepository extends JpaRepository<SweetOrder, Integer> {
 
-    List<SweetOrder> findAll();
-    SweetOrder save(SweetOrder sweetOrder);
-    void delete(SweetOrder sweetOrder);
+//    List<SweetOrder> findAll();
+//    SweetOrder save(SweetOrder sweetOrder);
+//    void delete(SweetOrder sweetOrder);
+//    List<SweetOrder> findBySweetOrderId(int sweetOrderId);
 }
